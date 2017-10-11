@@ -1,0 +1,44 @@
+github itu bisa untuk membuat project tanpa perlu membuat copyannya untuk backup dengan branch, misalnya, kita buat project index.html.. untuk membuat backupannya
+kita hanya perlu membuat bracnh, jadi dengan mengganti branch, otomatis file index.html akan berganti sesuai dengan branch yang kita pilih
+misalnya kita punya 2 branch, master dan tambahcontent, maka kita dapat memlihi antara branch tsb dan otomatis index.html akan berubah sesuai branch yang kita pilih
+
+
+
+masuk ke git
+
+
+masuk ke file ini caranya				= cd D:/Instal/Bekraf/Nodejs/bdt17
+tambah file .git untuk menggunakan git dengan		=git init 
+buat branch baru 					=git checkout -b 'namabranch' (namanya bebas)
+lihat semua branch					=git branch
+untuk ganti branch					= git checkout master (master itu nama branch)
+untuk numpuk bracnh master dengan branch tambahcontent	=git merge tambahcontent (tambahcontent itu nama branch)
+
+saat ngubah isi file, misalnya file html lihat teknik berikut (kita ga bisa ganti branch jika ada perubahan dan belum di add dan di commit)
+1. check status						=git status (jika ada tulisan merah artinya perlu di add)
+2. untuk safe/ menghilangkan tulisan merah		=git add index.html (untuk save 1 file atau) git add . (untuk mengsafe semuanya)
+3. chek status lagi 					=git status (jika ada tulisan hijau artinya perlu di commit)
+4. untuk tambah commit/ menghilangkan tulisan hijau	=git commit -m 'tambah comment disini' (commenannya bebas)
+5. lihat lagi dengan chekc status			=git status (jika ada tulisan:
+On branch tambahcontent
+nothing to commit, working tree clean
+maka aman, file sudah di safe)
+6 untuk liat log					=git log
+7 untuk numpuk branch, misalnya branch tambahcontent yang terbaru dan ingin numpuk di branch master
+  1. masuk dulu ke branch master			=git checkout 'master'
+  2. untuk menumpuk branch master			=git merge 'tambahcontent'
+
+untuk push atau simpan ke webnya github itu 
+login ke github dan pilih new repository, dan buat repositorynya (attention fella's, seringan ssh tu bermasalah jadi ubah ke url )
+1. buat keygen dengan					=ssh-keygen -t rsa -b 4096 -C "yudirius@gmail.com"
+2. cari keygennya di 					= C\user\incursio\.ssh
+3. ini untuk milih gitnya di repository (HTTP)		=git remote add origin https://github.com/yudirius/bdt17.git (contoh kalo ganti pake SSH) git remote set-url origin git@github.com:yudirius/bdt17.git
+4. untuk konek ssh github				=ssh -T git@github.com
+4. untuk upload ke repository github			=git push -u origin master (untuk download dan numpuk data kita, ganti push jadi pull, dan ngambil aja tanpa numpuk, ganti push jadi fetch)
+6. cara push alamat					=git push -u origin
+7. ganti alamat remote dari ssh jadi htttps		=git remote set-url origin https://github.com/yudirius/bdt17.git
+8. cek remote						=git remote -v
+
+
+
+  
